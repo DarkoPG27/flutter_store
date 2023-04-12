@@ -16,6 +16,7 @@ class ProductItem extends StatelessWidget {
           imageUrl,
           fit: BoxFit.cover,
         ),
+        /*      header: Text('This is header!'), */
         footer: GridTileBar(
           backgroundColor: Colors.black87,
           leading: IconButton(
