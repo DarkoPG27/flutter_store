@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/cart.dart';
+import '../providers/cart.dart' show Cart;
+import '../widgets/cart_item.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -51,7 +52,12 @@ class CartScreen extends StatelessWidget {
           Expanded(
               child: ListView.builder(
             itemCount: cart.itemCount,
-            itemBuilder: (ctx,index)=> ,
+            itemBuilder: (ctx, index) => CartItem(
+              cart.items.values.toList()[index].id,
+              cart.items.values.toList()[index].price,
+              cart.items.values.toList()[index].quantity,
+              cart.items.values.toList()[index].title,
+            ),
           ))
         ],
       ),
